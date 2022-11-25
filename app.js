@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 3001
 
 const users = require("./db/users.json");
 
@@ -11,6 +12,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(3000, () => {
-  console.log("Start server at port 3000...");
+app.listen(port, () => {
+  console.log(`Start server on port ${port}!`);
 });
